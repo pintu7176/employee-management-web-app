@@ -110,11 +110,14 @@
       border-top: 1px solid var(--border);
       display: flex;
       gap: 8px;
+      flex-wrap: wrap;
     }
     .member-card-footer .btn {
       flex: 1;
-      font-size: 0.78rem;
-      padding: 7px 10px;
+      font-size: 0.75rem;
+      padding: 7px 8px;
+      white-space: nowrap;
+      text-align: center;
     }
 
     /* ── HOD Banner ── */
@@ -282,6 +285,7 @@
           <p><%= hod.employeeId %> · <%= hod.position || 'HOD' %> · <a href="mailto:<%= hod.email %>" style="color:#fff;opacity:0.9;"><%= hod.email %></a></p>
         </div>
         <div style="display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap;">
+          <a href="/employees/profile/<%= hod._id %>" class="btn btn-sm no-print" style="background:rgba(255,255,255,0.2);color:#fff;border:1px solid rgba(255,255,255,0.3);" id="hodProfile">👁 Profile</a>
           <a href="/employees/salary-slip/<%= hod._id %>" class="btn btn-sm no-print" style="background:rgba(255,255,255,0.2);color:#fff;border:1px solid rgba(255,255,255,0.3);" id="hodSlip">💰 Slip</a>
           <a href="/attendance/employee/<%= hod._id %>" class="btn btn-sm no-print" style="background:rgba(255,255,255,0.2);color:#fff;border:1px solid rgba(255,255,255,0.3);" id="hodAtt">📅 Att.</a>
         </div>
@@ -449,8 +453,9 @@
 
             <!-- Card Footer Actions -->
             <div class="member-card-footer no-print">
-              <a href="/attendance/employee/<%= member._id %>" class="btn btn-secondary btn-sm" id="attBtn_<%= member._id %>">📅 Attendance</a>
-              <a href="/employees/salary-slip/<%= member._id %>" class="btn btn-secondary btn-sm" id="slipBtn_<%= member._id %>">💰 Salary Slip</a>
+              <a href="/employees/profile/<%= member._id %>" class="btn btn-primary btn-sm" id="profileBtn_<%= member._id %>">👁 Profile</a>
+              <a href="/attendance/employee/<%= member._id %>" class="btn btn-secondary btn-sm" id="attBtn_<%= member._id %>">📅 Att.</a>
+              <a href="/employees/salary-slip/<%= member._id %>" class="btn btn-secondary btn-sm" id="slipBtn_<%= member._id %>">💰 Slip</a>
             </div>
 
           </div>
