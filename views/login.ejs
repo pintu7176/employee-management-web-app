@@ -117,15 +117,9 @@
       background: transparent;
       margin: 0;
     }
-    .float-group:has(input:focus) label,
     .float-group:has(input:not(:placeholder-shown)) label {
-      top: 10px;
-      transform: translateY(0);
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+      opacity: 0;
+      visibility: hidden;
     }
 
     .input-icon-wrapper {
